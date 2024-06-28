@@ -21,8 +21,9 @@ export const App = () => {
     const { isLoggedIn, rol } = useAuth();
     return (
         <>
-            <Header />
             <Router>
+                <Header />
+
                 <Routes>
                     <Route exact path="/products" element={<Products />} />
                     <Route exact path="/" element={<Home />} />
