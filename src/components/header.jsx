@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
 import { FaShop, FaBars } from "react-icons/fa6";
 
 import "../styles/header.css";
@@ -12,10 +11,11 @@ export const Header = () => {
     const [menu, setMenu] = useState(false);
     const { rol, isLoggedIn } = useAuth();
     const handleLogout = () => {
+        const navigate = useNavigate();
         localStorage.removeItem("token");
         localStorage.removeItem("myId");
         localStorage.removeItem("rol");
-        return useNavigate('/login')
+        return navigate("/login");
     };
     return (
         <header className="header_container">
