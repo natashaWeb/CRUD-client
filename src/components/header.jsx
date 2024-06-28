@@ -31,16 +31,23 @@ export const Header = () => {
                     </li>
                     {rol > 0 && (
                         <>
-                            <li>
-                                <Link to="/myproducts" className="item">
-                                    Mis productos
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/product/new" className="item">
-                                    Nuevo producto
-                                </Link>
-                            </li>
+                            {isLoggedIn && (
+                                <>
+                                    <li>
+                                        <Link to="/myproducts" className="item">
+                                            Mis productos
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/product/new"
+                                            className="item"
+                                        >
+                                            Nuevo producto
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
                         </>
                     )}
                     {isLoggedIn ? (
