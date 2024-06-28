@@ -27,11 +27,7 @@ export const App = () => {
                 <Routes>
                     <Route exact path="/products" element={<Products />} />
                     <Route exact path="/" element={<Home />} />
-                    <Route
-                        exact
-                        path="/login"
-                        element={isLoggedIn ? <Navigate to={"/"} /> : <Login />}
-                    />
+                    <Route exact path="/login" element={<Login />} />
 
                     <Route
                         exact
