@@ -8,3 +8,16 @@ Cada usuario tiene capacidades distintas:
 - El cliente unicamente puede ver productos creado por los demas.
 
 - https://crud-client-six.vercel.app/
+
+Usuarios:
+Admin: 
+contraseña: 1234
+usuario: admin
+
+vendedor: 
+contraseña: 1234
+usuario: vendedor
+
+Cliente: 
+contraseña: 1234
+usuario: cliente
