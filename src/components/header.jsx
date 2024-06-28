@@ -11,9 +11,11 @@ export const Header = () => {
     const [menu, setMenu] = useState(false);
     const { rol, isLoggedIn } = useAuth();
     const handleLogout = () => {
+        const navigate = useNavigate()
         localStorage.removeItem("token");
         localStorage.removeItem("myId");
         localStorage.removeItem("rol");
+        navigate('/login')
     };
     return (
         <header className="header_container">
@@ -49,13 +51,12 @@ export const Header = () => {
                     )}
                     {isLoggedIn ? (
                         <li>
-                            <Link
-                                to={"/login"}
+                            <span
                                 className="item"
                                 onClick={() => handleLogout()}
                             >
                                 Cerrar sesion
-                            </Link>
+                            </span>
                         </li>
                     ) : (
                         <li>
