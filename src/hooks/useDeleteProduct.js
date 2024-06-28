@@ -27,7 +27,6 @@ const useDeleteProduct = () => {
                     `${VITE_API}/product/delete/${id}`,
                     opcionesEnvio
                 );
-
                 // Verificar si la solicitud fue exitosa
                 if (!response.ok) {
                     throw new Error(
@@ -35,7 +34,6 @@ const useDeleteProduct = () => {
                     );
                 }
                 const responseData = await response.json();
-                console.log(productos)
                 const nuevosProductos = productos.filter(
                     (producto) => producto._id !== responseData._id
                 );

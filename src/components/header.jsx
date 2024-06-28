@@ -14,7 +14,7 @@ export const Header = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("myId");
         localStorage.removeItem("rol");
-        window.location.reload();
+        setMenu(false);
     };
     return (
         <header className="header_container">
@@ -50,14 +50,15 @@ export const Header = () => {
                     )}
                     {isLoggedIn ? (
                         <li>
-                            <span
+                            <Link
+                                to={"/login"}
                                 className="item"
                                 onClick={() => {
                                     handleLogout();
                                 }}
                             >
                                 Cerrar sesion
-                            </span>
+                            </Link>
                         </li>
                     ) : (
                         <li>
