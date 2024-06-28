@@ -10,8 +10,10 @@ import { useAuth } from "../context/authContext";
 export const Header = () => {
     const [menu, setMenu] = useState(false);
     const { rol, isLoggedIn } = useAuth();
+    const navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem("token");
+        navigate("/login");
         window.location.reload();
     };
     return (
@@ -48,15 +50,14 @@ export const Header = () => {
                     )}
                     {isLoggedIn ? (
                         <li>
-                            <Link
-                                to={"/login"}
+                            <span
                                 className="item"
                                 onClick={() => {
                                     handleLogout();
                                 }}
                             >
                                 Cerrar sesion
-                            </Link>
+                            </span>
                         </li>
                     ) : (
                         <li>
