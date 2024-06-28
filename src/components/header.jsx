@@ -49,16 +49,15 @@ export const Header = () => {
                     )}
                     {isLoggedIn ? (
                         <li>
-                            <span
+                            <Link
+                                to={"/"}
                                 className="item"
                                 onClick={() => {
-                                    const navigate = useNavigate();
                                     handleLogout();
-                                    navigate("/login");
                                 }}
                             >
                                 Cerrar sesion
-                            </span>
+                            </Link>
                         </li>
                     ) : (
                         <li>
