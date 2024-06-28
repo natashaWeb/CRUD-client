@@ -58,7 +58,7 @@ const useGetProduct = () => {
         getProducts();
     }, [myId, VITE_API]);
 
-    return { productos };
+    return { productos, setProductos };
 };
 
 export default useGetProduct;

@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const useDeleteProduct = () => {
     const { VITE_API } = import.meta.env;
 
     // Función para eliminar un producto por su ID
-    const deleteProduct = async (id) => {
+    const deleteProduct = async (id, productos, setProductos) => {
         const decision = window.confirm("¿Quieres eliminar el producto?");
         if (decision) {
             // Validar existencia de token
@@ -32,9 +34,12 @@ const useDeleteProduct = () => {
                         "Error en la solicitud: " + response.status
                     );
                 }
-
-                // Recargar la página después de eliminar exitosamente el producto
-                window.location.reload();
+                const responseData = await response.json();
+                console.log(productos)
+                const nuevosProductos = productos.filter(
+                    (producto) => producto._id !== responseData._id
+                );
+                setProductos(nuevosProductos);
             } catch (error) {
                 console.error("Error al eliminar el producto:", error);
             }
