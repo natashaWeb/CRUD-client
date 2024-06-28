@@ -4,9 +4,18 @@ import { FaCartShopping, FaTrash, FaPencil } from "react-icons/fa6";
 
 import { useAuth } from "../context/authContext";
 
-import useDeleteProduct from '../hooks/useDeleteProduct'
+import useDeleteProduct from "../hooks/useDeleteProduct";
+import { useNavigate } from "react-router-dom";
 
-export const Product = ({ id, ownerId, titulo, imagen, precio, productos, setProductos }) => {
+export const Product = ({
+    id,
+    ownerId,
+    titulo,
+    imagen,
+    precio,
+    productos,
+    setProductos,
+}) => {
     const { rol, myId } = useAuth();
     const [miProducto, setMiProducto] = useState(0);
     // rol 0 = Cliente
@@ -19,7 +28,9 @@ export const Product = ({ id, ownerId, titulo, imagen, precio, productos, setPro
         else setMiProducto(0);
     }, []);
 
-    const {deleteProduct} = useDeleteProduct()
+    const { deleteProduct } = useDeleteProduct();
+
+    const navigate = useNavigate();
 
     return (
         <article className="card">
@@ -41,14 +52,30 @@ export const Product = ({ id, ownerId, titulo, imagen, precio, productos, setPro
                 )}
                 {rol === 1 && miProducto === 1 && (
                     <div className="icon_container">
-                        <FaTrash className="button_icon delete" onClick={()=>deleteProduct(id, productos, setProductos)}/>{" "}
-                        <FaPencil className="button_icon edit" onClick={()=> window.location.replace(`/product/edit/${id}`)}/>
+                        <FaTrash
+                            className="button_icon delete"
+                            onClick={() =>
+                                deleteProduct(id, productos, setProductos)
+                            }
+                        />{" "}
+                        <FaPencil
+                            className="button_icon edit"
+                            onClick={() => navigate(`/product/edit/${id}`)}
+                        />
                     </div>
                 )}
                 {rol === 2 && (
                     <div className="icon_container">
-                        <FaTrash className="button_icon delete" onClick={()=>deleteProduct(id, productos, setProductos)}/>{" "}
-                        <FaPencil className="button_icon edit" onClick={()=> window.location.replace(`/product/edit/${id}`)}/>
+                        <FaTrash
+                            className="button_icon delete"
+                            onClick={() =>
+                                deleteProduct(id, productos, setProductos)
+                            }
+                        />{" "}
+                        <FaPencil
+                            className="button_icon edit"
+                            onClick={() => navigate(`/product/edit/${id}`)}
+                        />
                     </div>
                 )}
             </div>
