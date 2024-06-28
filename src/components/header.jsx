@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { FaShop, FaBars } from "react-icons/fa6";
 
@@ -17,51 +18,51 @@ export const Header = () => {
     };
     return (
         <header className="header_container">
-            <a href="/">
+            <Link href="/">
                 <FaShop />
-            </a>
+            </Link>
             <FaBars onClick={() => setMenu(!menu)} />
             <nav className="nav_container">
                 <ul className={`item_container ${menu && "active"}`}>
                     <li>
-                        <a href="/" className="item">
+                        <Link href="/" className="item">
                             Inicio
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/products" className="item">
+                        <Link href="/products" className="item">
                             Productos
-                        </a>
+                        </Link>
                     </li>
                     {rol > 0 && (
                         <>
                             <li>
-                                <a href="/myproducts" className="item">
+                                <Link href="/myproducts" className="item">
                                     Mis productos
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/product/new" className="item">
+                                <Link href="/product/new" className="item">
                                     Nuevo producto
-                                </a>
+                                </Link>
                             </li>
                         </>
                     )}
                     {isLoggedIn ? (
                         <li>
-                            <a
+                            <Link
                                 href="/login"
                                 className="item"
                                 onClick={() => handleLogout()}
                             >
                                 Cerrar sesion
-                            </a>
+                            </Link>
                         </li>
                     ) : (
                         <li>
-                            <a href="/login" className="item">
+                            <Link href="/login" className="item">
                                 Iniciar sesion
-                            </a>
+                            </Link>
                         </li>
                     )}
                 </ul>
