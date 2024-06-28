@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useAuth } from "../context/authContext";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const useEditProduct = () => {
+    const navigate = useNavigate();
     const { myId } = useAuth();
     const { id } = useParams();
     const [datosProducto, setDatosProducto] = useState({
@@ -64,7 +65,7 @@ const useEditProduct = () => {
             }
             const responseData = await response.json();
 
-            window.location.replace("/myproducts");
+            navigate('/myproducts')
         } catch (error) {
             console.error("Error al editar el producto:", error);
         }

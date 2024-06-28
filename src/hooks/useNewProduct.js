@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useAuth } from "../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 const useNewProduct = () => {
+    const navigate = useNavigate();
     const { myId } = useAuth();
     const [datosProducto, setDatosProducto] = useState({
         titulo: "",
@@ -16,7 +18,10 @@ const useNewProduct = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         if (name === "precio") {
-            setDatosProducto({ ...datosProducto, [name]: parseInt(value) || 0 });
+            setDatosProducto({
+                ...datosProducto,
+                [name]: parseInt(value) || 0,
+            });
         } else {
             setDatosProducto({ ...datosProducto, [name]: value });
         }
@@ -47,7 +52,10 @@ const useNewProduct = () => {
                 body: JSON.stringify(datosProducto),
             };
 
-            const response = await fetch(`${VITE_API}/product/new`, opcionesEnvio);
+            const response = await fetch(
+                `${VITE_API}/product/new`,
+                opcionesEnvio
+            );
 
             if (!response.ok) {
                 throw new Error("Error en la solicitud: " + response.status);
@@ -56,7 +64,7 @@ const useNewProduct = () => {
             const responseData = await response.json();
             console.log("Producto creado exitosamente:", responseData);
             // Redirigir al usuario después de crear el producto
-            window.location.replace("/myproducts");
+            navigate('/myproducts')
         } catch (error) {
             console.error("Error al crear el producto:", error.message);
         }
