@@ -8,6 +8,11 @@ export const AuthProvider = ({ children }) => {
     const [rol, setRol] = useState(0);
     const [sessionVerified, setSessionVerified] = useState(false);
 
+    const logout = () => {
+        localStorage.removeItem("token");
+        setIsLoggedIn(false);
+    };
+
     useEffect(() => {
         const { VITE_API } = import.meta.env;
 
@@ -54,10 +59,10 @@ export const AuthProvider = ({ children }) => {
         if (!sessionVerified) {
             verifySession();
         }
-    }, [sessionVerified]); // Ejecutar el efecto cuando sessionVerified cambia
+    }, [sessionVerified, isLoggedIn]); // Ejecutar el efecto cuando sessionVerified cambia
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, myId, rol }}>
+        <AuthContext.Provider value={{ isLoggedIn, myId, rol, logout }}>
             {children}
         </AuthContext.Provider>
     );
