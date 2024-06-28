@@ -15,6 +15,7 @@ export const Header = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("myId");
         localStorage.removeItem("rol");
+        navigate('/login')
     };
     return (
         <header className="header_container">
@@ -60,9 +61,9 @@ export const Header = () => {
                         </li>
                     ) : (
                         <li>
-                            <Link to="/login" className="item">
+                            <span className="item">
                                 Iniciar sesion
-                            </Link>
+                            </span>
                         </li>
                     )}
                 </ul>

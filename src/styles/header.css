@@ -43,6 +43,7 @@
 .item_container .item{
     color: #fff;
     padding: 20px;
+    cursor: pointer;
 }
 .item_container .item:hover{
     color: #bccbf1;
