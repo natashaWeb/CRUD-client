@@ -15,7 +15,6 @@ export const Header = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("myId");
         localStorage.removeItem("rol");
-        return navigate("/login");
     };
     return (
         <header className="header_container">
