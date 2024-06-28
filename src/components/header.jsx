@@ -49,14 +49,12 @@ export const Header = () => {
                         </>
                     )}
                     {isLoggedIn ? (
-                        <li>
-                            <Link
-                                to={"/login"}
-                                className="item"
-                                onClick={() => {
-                                    handleLogout();
-                                }}
-                            >
+                        <li
+                            onClick={() => {
+                                handleLogout();
+                            }}
+                        >
+                            <Link to={"/login"} className="item">
                                 Cerrar sesion
                             </Link>
                         </li>
