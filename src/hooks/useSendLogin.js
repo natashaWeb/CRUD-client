@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const useSendLogin = () => {
-    const navigate = useNavigate();
     const [credenciales, setCredenciales] = useState({
         usuario: "",
         contraseña: "",
@@ -48,7 +47,7 @@ const useSendLogin = () => {
             console.log("Sesión iniciada con éxito:", responseData);
 
             // Redirigir al usuario a la página de productos
-            navigate("/");
+            window.location.reload()
         } catch (error) {
             console.error("Error al enviar la solicitud:", error.message);
         }
