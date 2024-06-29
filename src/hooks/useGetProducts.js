@@ -56,7 +56,7 @@ const useGetProduct = () => {
         };
 
         getProducts();
-    }, [myId, VITE_API]);
+    }, [myId, productos]);
 
     return { productos, setProductos };
 };
