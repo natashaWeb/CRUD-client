@@ -6,3 +6,18 @@ Cada usuario tiene capacidades distintas:
 - El admin puede eliminar y editar los productos de todos, ademas de poder agregar sus productos.
 - El vendedor puede crear, editar y eliminar sus propios productos, ademas de poder ver productos de los demas.
 - El cliente unicamente puede ver productos creado por los demas.
+
+- https://crud-client-six.vercel.app/
+
+Usuarios:
+Admin: 
+contraseña: 1234
+usuario: admin
+
+vendedor: 
+contraseña: 1234
+usuario: vendedor
+
+Cliente: 
+contraseña: 1234
+usuario: cliente
