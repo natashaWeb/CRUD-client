@@ -6,7 +6,8 @@ import "../styles/products.css";
 import useGetProduct from "../hooks/useGetProducts";
 
 export const ProductContainer = () => {
-    const { productos, setProductos} = useGetProduct();
+    const { productos, setProductos } = useGetProduct();
+    window.location.reload();
     return (
         <section className="product_container">
             {productos.map((producto) => (

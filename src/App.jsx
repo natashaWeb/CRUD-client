@@ -18,7 +18,7 @@ import { useAuth } from "./context/authContext";
 import "./styles/reset.css";
 
 export const App = () => {
-    const { isLoggedIn, rol } = useAuth();
+    const { isLoggedIn } = useAuth();
     return (
         <>
             <Router>
