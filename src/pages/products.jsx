@@ -5,10 +5,6 @@ import { ProductContainer } from "../components/productContainer";
 import "../styles/home.css";
 
 export const Products = () => {
-    useEffect(() => {
-        window.location.reload();
-    }, []);
-
     return (
         <main className="home_container">
             <h1>
