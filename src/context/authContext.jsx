@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("token");
         setIsLoggedIn(false);
         setMyId("");
-        setRol("");
+        setRol(0);
     };
 
     useEffect(() => {
