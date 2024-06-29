@@ -7,6 +7,7 @@ const useGetProduct = () => {
     const { VITE_API } = import.meta.env;
 
     useEffect(() => {
+        window.location.reload();
         const getProducts = async () => {
             try {
                 const token = localStorage.getItem("token");
