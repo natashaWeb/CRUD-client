@@ -12,7 +12,7 @@ import { Products } from "./pages/products";
 import { ProductNew } from "./pages/productNew";
 import { ProductEdit } from "./pages/productEdit";
 import { Header } from "./components/header";
-
+import { ProductPage } from "./pages/productPage";
 import { useAuth } from "./context/authContext";
 
 import "./styles/reset.css";
@@ -44,6 +44,11 @@ export const App = () => {
                         exact
                         path="/product/new"
                         element={isLoggedIn ? <ProductNew /> : <Login />}
+                    />
+                    <Route
+                        exact
+                        path="/product/:id"
+                        element={<ProductPage /> }
                     />
                     <Route path="*" element={<Navigate to={"/"} />} />
                 </Routes>

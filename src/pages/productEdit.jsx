@@ -56,6 +56,21 @@ export const ProductEdit = () => {
                     onChange={(e) => handleChange(e)}
                 />
             </div>
+            <div className="radio-inputs">
+                <label className="radio">
+                    <input type="radio" name="categoria" value={"hombre"} onChange={(e) => handleChange(e)}/>
+                    <span className="name">Hombre</span>
+                </label>
+                <label className="radio">
+                    <input type="radio" name="categoria" value={"mujer"} onChange={(e) => handleChange(e)}/>
+                    <span className="name">Mujer</span>
+                </label>
+
+                <label className="radio">
+                    <input type="radio" name="categoria" value={"niño"} onChange={(e) => handleChange(e)}/>
+                    <span className="name">Niño</span>
+                </label>
+            </div>
             <input type="submit" className="submit_input" value={"Editar"} />
         </form>
     );

@@ -13,60 +13,32 @@ export const Header = () => {
 
     return (
         <header className="header_container">
-            <Link to="/">
-                <FaShop />
-            </Link>
-            <FaBars onClick={() => setMenu(!menu)} />
-            <nav className="nav_container">
-                <ul className={`item_container ${menu && "active"}`}>
+            <h1 className="header_title">Sport Active</h1>
+            <FaBars className="nav_btn" onClick={() => setMenu(!menu)} />
+            <nav className={`nav_container ${menu && "active"}`}>
+                <ul className="item_container">
                     <li>
-                        <Link to="/" className="item">
-                            Inicio
-                        </Link>
+                        <Link to={"/"}>Inicio</Link>
                     </li>
                     <li>
-                        <Link to="/products" className="item">
-                            Productos
-                        </Link>
+                        <Link to={"/products"}>Productos</Link>
                     </li>
-                    {rol > 0 && (
+                    {isLoggedIn && (
                         <>
-                            {isLoggedIn && (
-                                <>
-                                    <li>
-                                        <Link to="/myproducts" className="item">
-                                            Mis productos
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="/product/new"
-                                            className="item"
-                                        >
-                                            Nuevo producto
-                                        </Link>
-                                    </li>
-                                </>
-                            )}
+                            <li>
+                                <Link to={"/myproducts"}>Mis productos</Link>
+                            </li>
+                            <li>
+                                <Link to={"/product/new"}>Crear producto</Link>
+                            </li>
+                            <li>
+                                <span onClick={logout}>Cerrar sesion</span>
+                            </li>
                         </>
                     )}
-                    {isLoggedIn ? (
+                    {!isLoggedIn && (
                         <li>
-                            <Link
-                                to={"/"}
-                                className="item"
-                                onClick={() => {
-                                    logout();
-                                }}
-                            >
-                                Cerrar sesion
-                            </Link>
-                        </li>
-                    ) : (
-                        <li>
-                            <Link to="/login" className="item">
-                                Iniciar sesion
-                            </Link>
+                            <Link to={"/login"}>Inciar sesion</Link>
                         </li>
                     )}
                 </ul>

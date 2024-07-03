@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { ProductContainer } from "../components/productContainer";
 
@@ -11,7 +11,6 @@ export const Products = () => {
                 {window.location.pathname === "/products" && "Productos"}
                 {window.location.pathname === "/myproducts" && "Mis productos"}
             </h1>
-
             <ProductContainer />
         </main>
     );

@@ -5,7 +5,7 @@ import { FaCartShopping, FaTrash, FaPencil } from "react-icons/fa6";
 import { useAuth } from "../context/authContext";
 
 import useDeleteProduct from "../hooks/useDeleteProduct";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export const Product = ({
     id,
@@ -34,9 +34,9 @@ export const Product = ({
 
     return (
         <article className="card">
-            <div className="card-img">
+            <Link to={`/product/${id}`} className="card-img">
                 <img src={`${imagen}`} alt="" />
-            </div>
+            </Link>
             <div className="card-info">
                 <p className="text-title">{titulo}</p>
             </div>

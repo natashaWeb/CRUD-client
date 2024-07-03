@@ -14,8 +14,22 @@ const useGetProduct = () => {
                 let opcionesEnvio = {};
                 let url = "";
 
-                // Determinar la URL y las opciones de envío basadas en la ruta actual
-                if (window.location.pathname === "/products") {
+                // Obtener el parámetro categoria de la URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const categoria = urlParams.get("categoria");
+
+                // Determinar la URL y las opciones de envío basadas en la categoría
+                if (categoria && window.location.pathname === "/products") {
+                    opcionesEnvio = {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: token,
+                        },
+                        body: JSON.stringify({ categoria }),
+                    };
+                    url = `/product/category?categoria=${categoria}`;
+                } else if (window.location.pathname === "/products") {
                     opcionesEnvio = {
                         method: "GET",
                     };
@@ -56,7 +70,7 @@ const useGetProduct = () => {
         };
 
         getProducts();
-    }, [myId, productos]);
+    }, [myId, productos]); // Se elimina 'productos' de las dependencias para evitar bucle infinito
 
     return { productos, setProductos };
 };

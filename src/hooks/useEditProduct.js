@@ -10,6 +10,7 @@ const useEditProduct = () => {
         titulo: "",
         precio: 0,
         imagen: "",
+        categoria: "",
         ownerId: myId,
     });
 
