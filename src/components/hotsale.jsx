@@ -37,7 +37,7 @@ export const Hotsale = () => {
                             </Link>
                         ))}
                     {productos.length === 0 && (
-                        <h2>No hay productos para mostrar</h2>
+                        <span className="noProducts">No hay productos para mostrar</span>
                     )}
                 </div>
                 {productos.length > 0 && (
