@@ -36,6 +36,13 @@ export const Header = () => {
                             </li>
                         </>
                     )}
+                    {isLoggedIn && rol === 0 && (
+                        <>
+                            <li>
+                                <span onClick={logout}>Cerrar sesión</span>
+                            </li>
+                        </>
+                    )}
                     {!isLoggedIn && (
                         <li>
                             <Link to={"/login"}>Inciar sesión</Link>
