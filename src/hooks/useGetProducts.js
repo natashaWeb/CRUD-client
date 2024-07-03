@@ -52,14 +52,12 @@ const useGetProduct = () => {
                     opcionesEnvio
                 );
 
-                // Verificar si la respuesta fue exitosa
                 if (!response.ok) {
                     throw new Error(
                         "Error al obtener productos: " + response.status
                     );
                 }
 
-                // Parsear la respuesta a formato JSON
                 const responseData = await response.json();
 
                 // Establecer el estado de productos con los datos recibidos
