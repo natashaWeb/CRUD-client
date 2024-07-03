@@ -31,10 +31,15 @@ const useEditProduct = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validación de campos obligatorios
-        if (!datosProducto.titulo || !datosProducto.precio) {
-            console.error("Por favor ingrese título y precio.");
-            return;
+        // Validar datos
+        if (
+            datosProducto.titulo.length === 0 ||
+            datosProducto.precio < 0 ||
+            datosProducto.imagen.length === 0 ||
+            datosProducto.categoria.length === 0
+        ) {
+            alert("Complete todos los campos");
+            throw new Error("Complete todos los campos");
         }
 
         // Validar existencia de token
@@ -66,7 +71,7 @@ const useEditProduct = () => {
             }
             const responseData = await response.json();
 
-            navigate('/myproducts')
+            navigate("/myproducts");
         } catch (error) {
             console.error("Error al editar el producto:", error);
         }

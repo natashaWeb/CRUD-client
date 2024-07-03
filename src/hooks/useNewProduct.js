@@ -39,9 +39,15 @@ const useNewProduct = () => {
                 throw new Error("No se ha iniciado sesión.");
             }
 
-            // Validar título y precio
-            if (!datosProducto.titulo || datosProducto.precio <= 0) {
-                throw new Error("Por favor ingrese un título y precio válido.");
+            // Validar datos
+            if (
+                datosProducto.titulo.length === 0 ||
+                datosProducto.precio < 0 ||
+                datosProducto.imagen.length === 0 ||
+                datosProducto.categoria.length === 0
+            ) {
+                alert("Complete todos los campos");
+                throw new Error("Complete todos los campos");
             }
 
             const opcionesEnvio = {
@@ -61,11 +67,11 @@ const useNewProduct = () => {
             if (!response.ok) {
                 throw new Error("Error en la solicitud: " + response.status);
             }
-            
+
             const responseData = await response.json();
             console.log("Producto creado exitosamente:", responseData);
             // Redirigir al usuario después de crear el producto
-            navigate('/myproducts')
+            navigate("/myproducts");
         } catch (error) {
             console.error("Error al crear el producto:", error.message);
         }
