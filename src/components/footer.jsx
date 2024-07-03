@@ -12,7 +12,6 @@ export const Footer = () => {
                 <li>12 1234-1234</li>
                 <li>email@gmail.com</li>
                 <li>Avenida 12</li>
-
             </ul>
             <ul>
                 <li>
@@ -26,9 +25,9 @@ export const Footer = () => {
                 </li>
             </ul>
             <ul>
-                <li>Metodos de envio</li>
-                <li>Politicas de devolucion</li>
-                <li>Terminos y condiciones</li>
+                <li>Métodos de envío</li>
+                <li>Políticas de devolución</li>
+                <li>Términos y condiciones</li>
             </ul>
         </footer>
     );

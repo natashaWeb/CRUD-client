@@ -14,8 +14,8 @@
     cursor: pointer;
     font-size: 2rem;
 }
-.header_title {
-    color: #fff;
+.header_container img {
+    width: 55px;
 }
 .nav_container a {
     color: #fff;
@@ -27,11 +27,11 @@
     display: flex;
     gap: 20px;
 }
-.item_container span{
+.item_container span {
     color: #fff;
     cursor: pointer;
 }
-.item_container span:hover{
+.item_container span:hover {
     color: blue;
 }
 @media only screen and (max-width: 900px) {

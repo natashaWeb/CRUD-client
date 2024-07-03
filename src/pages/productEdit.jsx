@@ -41,6 +41,27 @@ export const ProductEdit = () => {
                     />
                     <img src="/ejemplo3.jpeg" alt="" className="img_input3" />
                 </label>
+                <label className="img_input">
+                    <input
+                        type="radio"
+                        name="imagen"
+                        value={"/ejemplo4.jpeg"}
+                        className="input_radio4"
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <img src="/ejemplo4.jpeg" alt="" className="img_input4" />
+                </label>
+                <label className="img_input">
+                    <input
+                        type="radio"
+                        name="imagen"
+                        value={"/ejemplo5.jpeg"}
+                        className="input_radio5"
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <img src="/ejemplo5.jpeg" alt="" className="img_input5" />
+                </label>
+                
             </div>
             <div className="data_input">
                 <input

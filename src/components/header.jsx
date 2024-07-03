@@ -13,7 +13,7 @@ export const Header = () => {
 
     return (
         <header className="header_container">
-            <h1 className="header_title">Sport Active</h1>
+            <img src="/logo.png" alt="" />
             <FaBars className="nav_btn" onClick={() => setMenu(!menu)} />
             <nav className={`nav_container ${menu && "active"}`}>
                 <ul className="item_container">
@@ -23,7 +23,7 @@ export const Header = () => {
                     <li>
                         <Link to={"/products"}>Productos</Link>
                     </li>
-                    {isLoggedIn && (
+                    {isLoggedIn && rol > 0 && (
                         <>
                             <li>
                                 <Link to={"/myproducts"}>Mis productos</Link>
@@ -32,13 +32,13 @@ export const Header = () => {
                                 <Link to={"/product/new"}>Crear producto</Link>
                             </li>
                             <li>
-                                <span onClick={logout}>Cerrar sesion</span>
+                                <span onClick={logout}>Cerrar sesión</span>
                             </li>
                         </>
                     )}
                     {!isLoggedIn && (
                         <li>
-                            <Link to={"/login"}>Inciar sesion</Link>
+                            <Link to={"/login"}>Inciar sesión</Link>
                         </li>
                     )}
                 </ul>

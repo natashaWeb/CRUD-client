@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Catalog = () => {
     return (
         <section className="home_container">
-            <h2>Catalogos</h2>
+            <h2>Catálogos</h2>
             <div className="catalog_container">
                 <article className="catalog">
                     <span>Hombre</span>
