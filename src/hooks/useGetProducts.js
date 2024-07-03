@@ -70,7 +70,7 @@ const useGetProduct = () => {
         };
 
         getProducts();
-    }, [myId, productos]); // Se elimina 'productos' de las dependencias para evitar bucle infinito
+    }, [myId, window.location.pathname]);
 
     return { productos, setProductos };
 };

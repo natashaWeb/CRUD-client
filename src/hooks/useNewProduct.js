@@ -61,7 +61,7 @@ const useNewProduct = () => {
             if (!response.ok) {
                 throw new Error("Error en la solicitud: " + response.status);
             }
-
+            
             const responseData = await response.json();
             console.log("Producto creado exitosamente:", responseData);
             // Redirigir al usuario después de crear el producto
