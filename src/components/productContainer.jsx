@@ -9,6 +9,7 @@ export const ProductContainer = () => {
     const { productos, setProductos } = useGetProduct();
     return (
         <section className="product_container">
+            {productos.length === 0 && <span className="noProducts">No hay productos</span>}
             {productos.map((producto) => (
                 <Product
                     key={producto._id}
