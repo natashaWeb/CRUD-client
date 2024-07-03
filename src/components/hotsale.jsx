@@ -9,9 +9,11 @@ export const Hotsale = () => {
         <main className="home_container">
             <h2>Hot Sale</h2>
             <div className="carousel">
-                <button className="control left" onClick={prevSlide}>
-                    &lt;
-                </button>
+                {productos.length > 0 && (
+                    <button className="control left" onClick={prevSlide}>
+                        &lt;
+                    </button>
+                )}
 
                 <div
                     className="slider"
@@ -38,9 +40,11 @@ export const Hotsale = () => {
                         <h2>No hay productos para mostrar</h2>
                     )}
                 </div>
-                <button className="control right" onClick={nextSlide}>
-                    &gt;
-                </button>
+                {productos.length > 0 && (
+                    <button className="control right" onClick={nextSlide}>
+                        &gt;
+                    </button>
+                )}
             </div>
         </main>
     );
