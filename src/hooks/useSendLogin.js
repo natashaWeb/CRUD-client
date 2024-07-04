@@ -37,6 +37,7 @@ const useSendLogin = () => {
             const response = await fetch(`${VITE_API}/login`, opcionesEnvio);
 
             if (!response.ok) {
+                alert('Usuario o contraseña incorrecta')
                 throw new Error("Error en la solicitud: " + response.status);
             }
 
