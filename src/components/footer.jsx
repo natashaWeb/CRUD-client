@@ -9,9 +9,9 @@ export const Footer = () => {
     return (
         <footer className="footer_container">
             <ul>
-                <li>12 1234-1234</li>
-                <li>email@gmail.com</li>
-                <li>Avenida 12</li>
+                <li>+34 674112144</li>
+                <li>activesport@gmail.com</li>
+                <li>calle Andromeda, 15 Móstoles, Madrid</li>
             </ul>
             <ul>
                 <li>
