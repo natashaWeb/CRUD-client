@@ -45,7 +45,7 @@ export const Header = () => {
                     )}
                     {!isLoggedIn && (
                         <li>
-                            <Link to={"/login"}>Inciar sesión</Link>
+                            <Link to={"/login"}>Iniciar sesión</Link>
                         </li>
                     )}
                 </ul>
